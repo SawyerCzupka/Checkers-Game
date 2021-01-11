@@ -1,0 +1,3 @@
+D:/06 School Work/3 Computer Science - Zou/Classwork/Checkers Game/cmake-build-debug/CMakeFiles/Checkers_Game.dir
+D:/06 School Work/3 Computer Science - Zou/Classwork/Checkers Game/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/06 School Work/3 Computer Science - Zou/Classwork/Checkers Game/cmake-build-debug/CMakeFiles/rebuild_cache.dir

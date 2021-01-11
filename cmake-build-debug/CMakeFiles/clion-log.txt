@@ -1,0 +1,4 @@
+C:\Users\Sawyer\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "D:\06 School Work\3 Computer Science - Zou\Classwork\Checkers Game"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/06 School Work/3 Computer Science - Zou/Classwork/Checkers Game/cmake-build-debug
