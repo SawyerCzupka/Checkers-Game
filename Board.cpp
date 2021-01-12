@@ -36,6 +36,6 @@ void Board::printBoard() {
     std::cout << "-----------------------" << std::endl;
 }
 
-bool validateMove() {
+bool Board::validateMove() {
     return false;
 }
