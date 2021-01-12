@@ -14,7 +14,7 @@ public:
 
 private:
     bool isOccupied;
-    char pieceColor; // 'r' or 'b'
+    char pieceColor; // 'r' 'b' or 'n'
 };
 
 
