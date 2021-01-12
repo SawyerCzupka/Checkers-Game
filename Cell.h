@@ -7,7 +7,14 @@
 
 
 class Cell {
+public:
+    bool getIsOccupied() const;
 
+    char getPieceColor() const;
+
+private:
+    bool isOccupied;
+    char pieceColor; // 'r' or 'b'
 };
 
 

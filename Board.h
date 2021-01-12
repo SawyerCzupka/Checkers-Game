@@ -9,6 +9,7 @@
 
 class Board {
     Cell board[8][8];
+    void printBoard();
 
 };
 

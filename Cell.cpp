@@ -3,3 +3,11 @@
 //
 
 #include "Cell.h"
+
+bool Cell::getIsOccupied() const {
+    return isOccupied;
+}
+
+char Cell::getPieceColor() const {
+    return pieceColor;
+}
