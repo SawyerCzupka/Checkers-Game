@@ -11,7 +11,7 @@ class Board {
     Cell board[8][8]; // Array of cells, represents the board.
     void printBoard();
     bool validateMove(); //return bool value on validity on move, leaving parameters blank until they're finalised
-
+    void resetBoard();
 };
 
 
