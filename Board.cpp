@@ -13,3 +13,7 @@ void Board::printBoard() {
         }
     }
 }
+
+bool validateMove() {
+    return false;
+}
