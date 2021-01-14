@@ -11,3 +11,13 @@ bool Cell::getIsOccupied() const {
 char Cell::getPieceColor() const {
     return pieceColor;
 }
+
+Cell::Cell(char pieceColor) : pieceColor(pieceColor) {
+    if (pieceColor == 'n') {
+        !this->isOccupied;
+    }
+
+    else {
+        this->isOccupied;
+    }
+}

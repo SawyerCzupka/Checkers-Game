@@ -8,12 +8,14 @@
 
 class Cell {
 public:
+    explicit Cell(char pieceColor);
+
     bool getIsOccupied() const;
 
     char getPieceColor() const;
 
 private:
-    bool isOccupied;
+    bool isOccupied{};
     char pieceColor; // 'r' 'b' or 'n'
 };
 
