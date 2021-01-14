@@ -15,6 +15,8 @@ class CheckersGame {
 		void translate(char startArray[2], char endArray[2], int startConvert[2], int endConvert[2]);
 		bool verifyInput(int startConvert[2], int endConvert[2]);
 
+    [[noreturn]] void mainLoop();
+
 	private:
         void movePiece(int startPos[2], int endPos[2]);
         char currentMove = 'b';

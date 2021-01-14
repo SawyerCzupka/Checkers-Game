@@ -154,3 +154,24 @@ void CheckersGame::movePiece(int *startPos, int *endPos) {
     start->setIsOccupied(false);
     start->setPieceColor('n');
 }
+
+[[noreturn]] void CheckersGame::mainLoop() {
+    this->gameBoard.resetBoard();
+
+    int winner = 0;
+    while (winner == 0) {
+        switch(currentMove) {
+            case 'r':
+                std::cout << "Red, what is your move: " << std::endl;
+                break;
+            case 'b':
+                std::cout << "Black, what is your move: " << std::endl;
+                break;
+        }
+
+        std::string userInput;
+        std::cin >> userInput;
+
+
+    }
+}
