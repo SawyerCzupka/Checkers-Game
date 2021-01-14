@@ -156,7 +156,16 @@ void CheckersGame::movePiece(int *startPos, int *endPos) {
 }
 
 [[noreturn]] void CheckersGame::mainLoop() {
-    this->gameBoard.resetBoard();
+	std::string startMove;
+	std::string endMove;
+	bool checkInput = false;
+	char startArray[2];
+	char endArray[2];
+	int startConvert[2];
+	int endConvert[2];
+	
+	this->gameBoard.resetBoard();
+	this->gameBoard.printBoard();
 
     int winner = 0;
     while (winner == 0) {
@@ -169,9 +178,26 @@ void CheckersGame::movePiece(int *startPos, int *endPos) {
                 break;
         }
 
-        std::string userInput;
-        std::cin >> userInput;
+		//USER INPUT & INPUT VALIDATION
+		do {
 
+
+			userInput(startMove, endMove);
+
+			startArray[0] = startMove[0];
+			startArray[1] = startMove[1];
+			endArray[0] = endMove[0];
+			endArray[1] = endMove[1];
+
+			translate(startArray, endArray, startConvert, endConvert);
+
+			checkInput = verifyInput(startConvert, endConvert);
+
+			if (!checkInput) {
+				std::cout << "ERROR: Unrecognised input" << std::endl;
+			}
+
+		} while (!checkInput);
 
     }
 }
