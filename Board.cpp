@@ -23,6 +23,7 @@ void Board::printBoard() {
                         break;
                     case 'n':
                         std::cout << "_";
+                        break;
                     default:
                         std::cout << "Error" << std::endl;
                         break;
