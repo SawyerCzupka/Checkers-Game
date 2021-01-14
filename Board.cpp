@@ -112,11 +112,26 @@ void Board::resetBoard() {
 }
 
 
-bool Board::validateMove() {
-    return false;
-}
+bool Board::validateMove(int startConvert[2], int endConvert[2], int player) {
+    Cell current = this->board[startConvert[0]][startConvert[1]];
+    Cell next = this->board[endConvert[0]][endConvert[1]];
 
-Cell *Board::getBoard() {
-    return *this->board;
+    if (current.getIsOccupied()) {
+        if (player == 1) {
+            if (current.getPieceColor() == 'b') {
+                if (next.getPieceColor() == 'n') {
+
+                }
+            }
+            if (player == 2) {
+                if (current.getPieceColor() == 'r') {
+                    if (next.getPieceColor() == 'n') {
+
+                    }
+                }
+            }
+    }
+
+    return false;
 }
 
