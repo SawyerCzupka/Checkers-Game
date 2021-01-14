@@ -138,8 +138,8 @@ bool Board::validateMove(int startConvert[2], int endConvert[2], char currentMov
                     }
                 }
             }
+        }
+
+        return false;
     }
-
-    return false;
 }
-

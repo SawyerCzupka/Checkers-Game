@@ -32,7 +32,7 @@ int main() {
 
     } while (!checkInput);
     
-    std::cout << startConvert[0] << startConvert[1] << endConvert[0] << endConvert[1] << std::endl;
+    //std::cout << startConvert[0] << startConvert[1] << endConvert[0] << endConvert[1] << std::endl;
 
     return 0;
 }

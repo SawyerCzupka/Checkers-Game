@@ -14,6 +14,8 @@ public:
 
     char getPieceColor() const;
 
+    Cell(){} //Dummy constructor
+
 private:
     bool isOccupied{};
 public:
