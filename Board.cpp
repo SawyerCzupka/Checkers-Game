@@ -116,17 +116,25 @@ bool Board::validateMove(int startConvert[2], int endConvert[2], int player) {
     Cell current = this->board[startConvert[0]][startConvert[1]];
     Cell next = this->board[endConvert[0]][endConvert[1]];
 
-    if (current.getIsOccupied()) {
-        if (player == 1) {
-            if (current.getPieceColor() == 'b') {
-                if (next.getPieceColor() == 'n') {
+    int middleX = std::abs(startConvert[0] - endConvert[0]) / 2;
+    int middleY = std::abs(startConvert[1] - endConvert[1]) / 2;
+    Cell middle = this->board[middleX][middleY];
 
+    if (current.getIsOccupied()) {  //Check if cell is occupied
+        if (player == 1) {  //Check if player is using correct piece
+            if (current.getPieceColor() == 'b') {   //Check if used piece is correct
+                if (next.getPieceColor() == 'n') {  //Check if end cell empty
+                    if (middle.getPieceColor() == 'r') {    //Check if capturing enemy
+                        return true;
+                    }
                 }
             }
             if (player == 2) {
                 if (current.getPieceColor() == 'r') {
                     if (next.getPieceColor() == 'n') {
-
+                        if (middle.getPieceColor() == 'b') {
+                            return true;
+                        }
                     }
                 }
             }
