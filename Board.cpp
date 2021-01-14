@@ -112,7 +112,7 @@ void Board::resetBoard() {
 }
 
 
-bool Board::validateMove(int startConvert[2], int endConvert[2], int player) {
+bool Board::validateMove(int startConvert[2], int endConvert[2], char currentMove) {
     Cell current = this->board[startConvert[0]][startConvert[1]];
     Cell next = this->board[endConvert[0]][endConvert[1]];
 
@@ -121,7 +121,7 @@ bool Board::validateMove(int startConvert[2], int endConvert[2], int player) {
     Cell middle = this->board[middleX][middleY];
 
     if (current.getIsOccupied()) {  //Check if cell is occupied
-        if (player == 1) {  //Check if player is using correct piece
+        if (currentMove == 'b') {  //Check if player is using correct piece
             if (current.getPieceColor() == 'b') {   //Check if used piece is correct
                 if (next.getPieceColor() == 'n') {  //Check if end cell empty
                     if (middle.getPieceColor() == 'r') {    //Check if capturing enemy
@@ -129,7 +129,7 @@ bool Board::validateMove(int startConvert[2], int endConvert[2], int player) {
                     }
                 }
             }
-            if (player == 2) {
+            if (currentMove == 'r') {
                 if (current.getPieceColor() == 'r') {
                     if (next.getPieceColor() == 'n') {
                         if (middle.getPieceColor() == 'b') {
