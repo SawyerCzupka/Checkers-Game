@@ -20,7 +20,7 @@ class CheckersGame {
 		CheckersGame() {} //Dummy constructor
 
 	private:
-        void movePiece(int startPos[2], int endPos[2]);
+        void movePiece(int* startPos, int* endPos);
         char currentMove = 'b';
         Board gameBoard;
 		std::string startMove;
