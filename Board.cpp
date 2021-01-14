@@ -116,3 +116,7 @@ bool Board::validateMove() {
     return false;
 }
 
+Cell *Board::getBoard() {
+    return *this->board;
+}
+

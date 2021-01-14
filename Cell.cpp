@@ -21,3 +21,11 @@ Cell::Cell(char pieceColor) : pieceColor(pieceColor) {
         this->isOccupied;
     }
 }
+
+void Cell::setIsOccupied(bool isOccupied) {
+    Cell::isOccupied = isOccupied;
+}
+
+void Cell::setPieceColor(char pieceColor) {
+    Cell::pieceColor = pieceColor;
+}

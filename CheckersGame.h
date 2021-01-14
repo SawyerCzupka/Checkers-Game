@@ -7,6 +7,8 @@
 
 #include <iostream>
 
+#include "Board.h"
+
 class CheckersGame {
 	public:
 		void userInput(std::string& startMove, std::string& endMove);
@@ -14,6 +16,9 @@ class CheckersGame {
 		bool verifyInput(int startConvert[2], int endConvert[2]);
 
 	private:
+        void movePiece(int startPos[2], int endPos[2]);
+        char currentMove = 'b';
+        Board gameBoard;
 		std::string startMove;
 		std::string endMove;
 };

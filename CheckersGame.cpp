@@ -4,6 +4,7 @@
 
 #include "CheckersGame.h"
 #include <iostream>
+#include <cmath>
 
 void CheckersGame::userInput(std::string& startMove, std::string& endMove) {
 	std::cout << "Input move (e.g., A6 B5): ";
@@ -132,4 +133,24 @@ bool CheckersGame::verifyInput(int startConvert[2], int endConvert[2]) {
 	else {
 		return false;
 	}
+}
+
+void CheckersGame::movePiece(int *startPos, int *endPos) {
+    Cell* start = &gameBoard.board[startPos[0]][startPos[1]];
+    Cell* end = &gameBoard.board[endPos[0]][endPos[1]];
+
+    if (std::abs(startPos[0] - endPos[0]) == 2) {
+        int middleX = std::abs(startPos[0] - endPos[0]) / 2;
+        int middleY = std::abs(startPos[1] - endPos[1]) / 2;
+
+        Cell* middle = &gameBoard.board[middleX][middleY];
+        middle->setIsOccupied(false);
+        middle->setPieceColor('n');
+    }
+
+    end->setPieceColor(start->getPieceColor());
+    end->setIsOccupied(start->getIsOccupied());
+
+    start->setIsOccupied(false);
+    start->setPieceColor('n');
 }

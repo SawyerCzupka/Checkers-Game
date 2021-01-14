@@ -16,6 +16,12 @@ public:
 
 private:
     bool isOccupied{};
+public:
+    void setIsOccupied(bool isOccupied);
+
+    void setPieceColor(char pieceColor);
+
+private:
     char pieceColor; // 'r' 'b' or 'n'
 };
 
