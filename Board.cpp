@@ -37,7 +37,7 @@ void Board::printBoard() {
 }
 
 
-
+/*
 void Board::resetBoard() {
     this->board[0][0] = 'n';
     this->board[0][1] = 'b';
@@ -111,7 +111,7 @@ void Board::resetBoard() {
     this->board[7][6] = 'r';
     this->board[7][7] = 'n';
 }
-
+*/
 bool Board::validateMove() {
     return false;
 }
