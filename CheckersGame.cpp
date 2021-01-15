@@ -126,7 +126,7 @@ void CheckersGame::translate(char startArray[2], char endArray[2], int startConv
 }
 
 bool CheckersGame::verifyInput(int startConvert[2], int endConvert[2]) {
-	if ((((startConvert[0] > 0) && (startConvert[0] < 9)) && ((endConvert[0] > 0) && (endConvert[0] < 9))) && (((startConvert[1] > 0) && (startConvert[1] < 9)) && ((endConvert[1] > 0) && (endConvert[1] < 9)))) {
+	if ((((startConvert[0] >= 0) && (startConvert[0] <= 7)) && ((endConvert[0] >= 0) && (endConvert[0] <= 7))) && (((startConvert[1] >= 0) && (startConvert[1] <= 7)) && ((endConvert[1] >= 0) && (endConvert[1] <= 7)))) {
 		return true;
 	}
 	else {
