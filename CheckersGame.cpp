@@ -7,7 +7,7 @@
 #include <cmath>
 
 void CheckersGame::userInput(std::string& startMove, std::string& endMove) {
-	std::cout << "Input move (e.g., A6 B5): ";
+	std::cout << "Input move (e.g., C2 D3): ";
 	std::cin >> startMove;
 	std::cin >> endMove;
 }
