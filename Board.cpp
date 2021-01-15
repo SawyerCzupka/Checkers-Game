@@ -144,13 +144,10 @@ bool Board::validateMove(int startConvert[2], int endConvert[2], char currentMov
             }
         }
     }
-    std::cout << startConvert[0] << startConvert[1] << endConvert[0] << endConvert[1] << std::endl;
+
     if (startConvert[0] - endConvert[0] == 1 || startConvert[0] - endConvert[0] == -1) {
-        std::cout << "1" << std::endl;
         if (std::abs(startConvert[1] - endConvert[1]) == 1) {
-            std::cout << "2" << std::endl;
             if (!current.getIsOccupied()) {
-                std::cout << "3" << std::endl;
                 if (currentMove == 'b') {
                     if (current.getPieceColor() == 'b') {
                         if (next.getPieceColor() == 'n') {
