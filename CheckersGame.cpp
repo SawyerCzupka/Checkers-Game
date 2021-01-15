@@ -29,6 +29,7 @@ void CheckersGame::translate(char startArray[2], char endArray[2], int startConv
 			break;
 		case 'E':
 			startConvert[0] = 4;
+			break;
 		case 'F':
 			startConvert[0] = 5;
 			break;
@@ -56,6 +57,7 @@ void CheckersGame::translate(char startArray[2], char endArray[2], int startConv
 			break;
 		case '5':
 			startConvert[1] = 4;
+			break;
 		case '6':
 			startConvert[1] = 5;
 			break;
@@ -84,6 +86,7 @@ void CheckersGame::translate(char startArray[2], char endArray[2], int startConv
 			break;
 		case 'E':
 			endConvert[0] = 4;
+			break;
 		case 'F':
 			endConvert[0] = 5;
 			break;
@@ -111,6 +114,7 @@ void CheckersGame::translate(char startArray[2], char endArray[2], int startConv
 			break;
 		case '5':
 			endConvert[1] = 4;
+			break;
 		case '6':
 			endConvert[1] = 5;
 			break;
