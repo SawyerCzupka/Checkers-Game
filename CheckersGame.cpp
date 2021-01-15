@@ -170,7 +170,8 @@ void CheckersGame::changeTurn(char& currentMove) {
 	char endArray[2];
 	int startConvert[2];
 	int endConvert[2];
-	
+	int pieceCount[2];
+
 	this->gameBoard.resetBoard();
 	this->gameBoard.printBoard();
 
@@ -215,5 +216,6 @@ void CheckersGame::changeTurn(char& currentMove) {
 		movePiece(startConvert, endConvert);
 		changeTurn(currentMove);
 
+		winner = this->gameBoard.checkWinner(pieceCount);
     }
 }

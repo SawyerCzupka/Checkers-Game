@@ -144,3 +144,34 @@ bool Board::validateMove(int startConvert[2], int endConvert[2], char currentMov
         return false;
     }
 }
+
+int Board::checkWinner(int pieceCount[2]) {
+    int totalB = 0;
+    int totalR = 0;
+
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+            Cell current = this->board[i][j];
+
+            if (current.getIsOccupied()) {
+                switch (current.getPieceColor()) {
+                    case 'r':
+                        totalR++;
+                        break;
+                    case 'b':
+                        totalB++;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+    }
+    
+    if (totalB == 0 || totalR == 0) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
