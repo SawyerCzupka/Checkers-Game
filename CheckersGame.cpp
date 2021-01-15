@@ -217,7 +217,7 @@ void CheckersGame::mainLoop() {
 		movePiece(startConvert, endConvert);
 		changeTurn(currentMove);
 
-		//winner = this->gameBoard.checkWinner(pieceCount);
+		winner = this->gameBoard.checkWinner(pieceCount);
     }
 	
 	if (pieceCount[0] == 0) {

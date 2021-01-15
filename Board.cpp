@@ -173,17 +173,15 @@ int Board::checkWinner(int pieceCount[2]) {
         for (int j = 0; j < 8; j++) {
             Cell current = this->board[i][j];
 
-            if (current.getIsOccupied()) {
-                switch (current.getPieceColor()) {
-                    case 'r':
-                        totalR++;
-                        break;
-                    case 'b':
-                        totalB++;
-                        break;
-                    default:
-                        break;
-                }
+            switch (current.getPieceColor()) {
+                case 'r':
+                    totalR++;
+                    break;
+                case 'b':
+                    totalB++;
+                    break;
+                default:
+                    break;
             }
         }
     }
