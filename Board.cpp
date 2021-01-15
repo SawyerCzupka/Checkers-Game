@@ -168,6 +168,9 @@ int Board::checkWinner(int pieceCount[2]) {
         }
     }
     
+    pieceCount[0] = totalB;
+    pieceCount[1] = totalR;
+
     if (totalB == 0 || totalR == 0) {
         return 1;
     }

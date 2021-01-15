@@ -218,4 +218,11 @@ void CheckersGame::changeTurn(char& currentMove) {
 
 		winner = this->gameBoard.checkWinner(pieceCount);
     }
+	
+	if (pieceCount[0] == 0) {
+		std::cout << "Red wins!" << std::endl;
+	}
+	else if (pieceCount[1] == 0) {
+		std::cout << "Black wins!" << std::endl;
+	}
 }
