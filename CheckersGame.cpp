@@ -125,7 +125,6 @@ void CheckersGame::translate(char startArray[2], char endArray[2], int startConv
 	}
 }
 
-
 bool CheckersGame::verifyInput(int startConvert[2], int endConvert[2]) {
 	if ((((startConvert[0] > 0) && (startConvert[0] < 9)) && ((endConvert[0] > 0) && (endConvert[0] < 9))) && (((startConvert[1] > 0) && (startConvert[1] < 9)) && ((endConvert[1] > 0) && (endConvert[1] < 9)))) {
 		return true;
@@ -153,6 +152,15 @@ void CheckersGame::movePiece(int *startPos, int *endPos) {
 
     start->setIsOccupied(false);
     start->setPieceColor('n');
+}
+
+void changeTurn(char& currentMove) {
+	if (currentMove == 'b') {
+		currentMove == 'r';
+	}
+	else {
+		currentMove = 'b';
+	}
 }
 
 [[noreturn]] void CheckersGame::mainLoop() {
@@ -205,6 +213,7 @@ void CheckersGame::movePiece(int *startPos, int *endPos) {
 		} while (!checkInput && !checkInput2);
 
 		movePiece(startConvert, endConvert);
+		changeTurn(currentMove);
 
     }
 }

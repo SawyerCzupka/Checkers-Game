@@ -14,6 +14,7 @@ class CheckersGame {
 		void userInput(std::string& startMove, std::string& endMove);
 		void translate(char startArray[2], char endArray[2], int startConvert[2], int endConvert[2]);
 		bool verifyInput(int startConvert[2], int endConvert[2]);
+		void changeTurn(char& currentMove);
 
 		[[noreturn]] void mainLoop();
 		
