@@ -116,46 +116,50 @@ bool Board::validateMove(int startConvert[2], int endConvert[2], char currentMov
     Cell next = this->board[endConvert[0]][endConvert[1]];
 
     if (std::abs(startConvert[0] - endConvert[0]) == 2) {
-        int middleX = std::abs(startConvert[0] - endConvert[0]) / 2;
-        int middleY = std::abs(startConvert[1] - endConvert[1]) / 2;
-        Cell middle = this->board[middleX][middleY];
+        if (std::abs(startConvert[1] - endConvert[1]) == 2) {
+            int middleX = std::abs(startConvert[0] - endConvert[0]) / 2;
+            int middleY = std::abs(startConvert[1] - endConvert[1]) / 2;
+            Cell middle = this->board[middleX][middleY];
 
-        if (!current.getIsOccupied()) {  //Check if cell is occupied
-            if (currentMove == 'b') {  //Check if player is using correct piece
-                if (current.getPieceColor() == 'b') {   //Check if used piece is correct
-                    if (next.getPieceColor() == 'n') {  //Check if end cell empty
-                        if (middle.getPieceColor() == 'r') {    //Check if capturing enemy
-                            return true;
+            if (!current.getIsOccupied()) {  //Check if cell is occupied
+                if (currentMove == 'b') {  //Check if player is using correct piece
+                    if (current.getPieceColor() == 'b') {   //Check if used piece is correct
+                        if (next.getPieceColor() == 'n') {  //Check if end cell empty
+                            if (middle.getPieceColor() == 'r') {    //Check if capturing enemy
+                                return true;
+                            }
                         }
                     }
                 }
-            }
-            if (currentMove == 'r') {
-                if (current.getPieceColor() == 'r') {
-                    if (next.getPieceColor() == 'n') {
-                        if (middle.getPieceColor() == 'b') {
-                            return true;
+                if (currentMove == 'r') {
+                    if (current.getPieceColor() == 'r') {
+                        if (next.getPieceColor() == 'n') {
+                            if (middle.getPieceColor() == 'b') {
+                                return true;
+                            }
                         }
                     }
                 }
-            }
 
+            }
         }
     }
 
     if (std::abs(startConvert[0] - endConvert[0]) == 1) {
-        if (!current.getIsOccupied()) {
-            if (currentMove == 'b') {
-                if (current.getPieceColor() == 'b') {
-                    if (next.getPieceColor() == 'n') {
-                        return true;
+        if (std::abs(startConvert[1] - endConvert[1]) == 1) {
+            if (!current.getIsOccupied()) {
+                if (currentMove == 'b') {
+                    if (current.getPieceColor() == 'b') {
+                        if (next.getPieceColor() == 'n') {
+                            return true;
+                        }
                     }
                 }
-            }
-            if (currentMove == 'r') {
-                if (current.getPieceColor() == 'r') {
-                    if (next.getPieceColor() == 'n') {
-                        return true;
+                if (currentMove == 'r') {
+                    if (current.getPieceColor() == 'r') {
+                        if (next.getPieceColor() == 'n') {
+                            return true;
+                        }
                     }
                 }
             }
