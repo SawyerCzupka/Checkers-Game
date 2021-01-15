@@ -120,7 +120,7 @@ bool Board::validateMove(int startConvert[2], int endConvert[2], char currentMov
         int middleY = std::abs(startConvert[1] - endConvert[1]) / 2;
         Cell middle = this->board[middleX][middleY];
 
-        if (current.getIsOccupied()) {  //Check if cell is occupied
+        if (!current.getIsOccupied()) {  //Check if cell is occupied
             if (currentMove == 'b') {  //Check if player is using correct piece
                 if (current.getPieceColor() == 'b') {   //Check if used piece is correct
                     if (next.getPieceColor() == 'n') {  //Check if end cell empty
@@ -144,7 +144,7 @@ bool Board::validateMove(int startConvert[2], int endConvert[2], char currentMov
     }
 
     if (std::abs(startConvert[0] - endConvert[0]) == 1) {
-        if (current.getIsOccupied()) {
+        if (!current.getIsOccupied()) {
             if (currentMove == 'b') {
                 if (current.getPieceColor() == 'b') {
                     if (next.getPieceColor() == 'n') {

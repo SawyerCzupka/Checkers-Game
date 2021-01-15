@@ -173,10 +173,11 @@ void CheckersGame::mainLoop() {
 	int pieceCount[2];
 
 	this->gameBoard.resetBoard();
-	this->gameBoard.printBoard();
 
     int winner = 0;
     while (winner == 0) {
+		this->gameBoard.printBoard();
+
         switch(currentMove) {
             case 'r':
                 std::cout << "Red, what is your move: " << std::endl;
@@ -216,7 +217,7 @@ void CheckersGame::mainLoop() {
 		movePiece(startConvert, endConvert);
 		changeTurn(currentMove);
 
-		winner = this->gameBoard.checkWinner(pieceCount);
+		//winner = this->gameBoard.checkWinner(pieceCount);
     }
 	
 	if (pieceCount[0] == 0) {
