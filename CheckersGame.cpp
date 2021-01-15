@@ -154,9 +154,9 @@ void CheckersGame::movePiece(int *startPos, int *endPos) {
     start->setPieceColor('n');
 }
 
-void changeTurn(char& currentMove) {
+void CheckersGame::changeTurn(char& currentMove) {
 	if (currentMove == 'b') {
-		currentMove == 'r';
+		currentMove = 'r';
 	}
 	else {
 		currentMove = 'b';
