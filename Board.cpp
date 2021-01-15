@@ -117,10 +117,11 @@ bool Board::validateMove(int startConvert[2], int endConvert[2], char currentMov
 
     if (std::abs(startConvert[0] - endConvert[0]) == 2) {
         if (std::abs(startConvert[1] - endConvert[1]) == 2) {
-            int middleX = std::abs(startConvert[0] - endConvert[0]) / 2;
-            int middleY = std::abs(startConvert[1] - endConvert[1]) / 2;
+            int middleX = std::abs(startConvert[0] + endConvert[0]) / 2;
+            int middleY = std::abs(startConvert[1] + endConvert[1]) / 2;
             Cell middle = this->board[middleX][middleY];
 
+            //std::cout << middleX << middleY << startConvert[0] << endConvert[0] << std::endl;
             if (!current.getIsOccupied()) {  //Check if cell is occupied
                 if (currentMove == 'b') {  //Check if player is using correct piece
                     if (current.getPieceColor() == 'b') {   //Check if used piece is correct

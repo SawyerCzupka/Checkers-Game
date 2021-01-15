@@ -143,8 +143,8 @@ void CheckersGame::movePiece(int *startPos, int *endPos) {
     Cell* end = &gameBoard.board[endPos[0]][endPos[1]];
 
     if (std::abs(startPos[0] - endPos[0]) == 2) {
-        int middleX = std::abs(startPos[0] - endPos[0]) / 2;
-        int middleY = std::abs(startPos[1] - endPos[1]) / 2;
+        int middleX = std::abs(startPos[0] + endPos[0]) / 2;
+        int middleY = std::abs(startPos[1] + endPos[1]) / 2;
 
         Cell* middle = &gameBoard.board[middleX][middleY];
         middle->setIsOccupied(false);
