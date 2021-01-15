@@ -9,32 +9,30 @@
 
 void Board::printBoard() {
     for (int i = 0; i < 8; i++) {
-        std::cout << "-----------------------" << std::endl;
+        std::cout << "-----------------------------------------------" << std::endl;
         for (int j = 0; j < 8; j++) {
             Cell current = this->board[i][j];
 
-            if (current.getIsOccupied()) {
-                switch (current.getPieceColor()) {
-                    case 'r':
-                        std::cout << "r";
-                        break;
-                    case 'b':
-                        std::cout << "b";
-                        break;
-                    case 'n':
-                        std::cout << "_";
-                        break;
-                    default:
-                        std::cout << "Error" << std::endl;
-                        break;
-                }
+            switch (current.getPieceColor()) {
+                case 'r':
+                    std::cout << "r";
+                    break;
+                case 'b':
+                    std::cout << "b";
+                    break;
+                case 'n':
+                    std::cout << " ";
+                    break;
+                default:
+                    std::cout << "Error" << std::endl;
+                    break;
             }
 
-            std::cout << " | ";
+            std::cout << "  |  ";
         }
         std::cout << std::endl;
     }
-    std::cout << "-----------------------" << std::endl;
+    std::cout << "-----------------------------------------------" << std::endl;
 }
 
 
@@ -104,12 +102,12 @@ void Board::resetBoard() {
 
     this->board[7][0] = Cell('r');
     this->board[7][1] = Cell('n');
-    this->board[7][2] = Cell('n');
-    this->board[7][3] = Cell('r');
-    this->board[7][4] = Cell('n');
-    this->board[7][5] = Cell('r');
-    this->board[7][6] = Cell('n');
-    this->board[7][7] = Cell('r');
+    this->board[7][2] = Cell('r');
+    this->board[7][3] = Cell('n');
+    this->board[7][4] = Cell('r');
+    this->board[7][5] = Cell('n');
+    this->board[7][6] = Cell('r');
+    this->board[7][7] = Cell('n');
 }
 
 
@@ -130,12 +128,12 @@ bool Board::validateMove(int startConvert[2], int endConvert[2], char currentMov
                     }
                 }
             }
-            if (currentMove == 'r') {
-                if (current.getPieceColor() == 'r') {
-                    if (next.getPieceColor() == 'n') {
-                        if (middle.getPieceColor() == 'b') {
-                            return true;
-                        }
+        }
+        if (currentMove == 'r') {
+            if (current.getPieceColor() == 'r') {
+                if (next.getPieceColor() == 'n') {
+                    if (middle.getPieceColor() == 'b') {
+                        return true;
                     }
                 }
             }
@@ -143,6 +141,7 @@ bool Board::validateMove(int startConvert[2], int endConvert[2], char currentMov
 
         return false;
     }
+    return false;
 }
 
 int Board::checkWinner(int pieceCount[2]) {

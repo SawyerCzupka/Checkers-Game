@@ -16,9 +16,9 @@ class CheckersGame {
 		bool verifyInput(int startConvert[2], int endConvert[2]);
 		void changeTurn(char& currentMove);
 
-		[[noreturn]] void mainLoop();
+		void mainLoop();
 		
-		CheckersGame() {} //Dummy constructor
+		CheckersGame() = default; //Dummy constructor
 
 	private:
         void movePiece(int* startPos, int* endPos);

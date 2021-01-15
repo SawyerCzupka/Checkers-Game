@@ -15,7 +15,7 @@ public:
     void printBoard();
     bool validateMove(int startConvert[2], int endConvert[2], char currentMove); //return bool value on validity on move, leaving parameters blank until they're finalised
     void resetBoard();
-    int Board::checkWinner(int pieceCount[2]);
+    int checkWinner(int pieceCount[2]);
 
     Board() {} //Dummy constructor
 };

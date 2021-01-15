@@ -163,7 +163,7 @@ void CheckersGame::changeTurn(char& currentMove) {
 	}
 }
 
-[[noreturn]] void CheckersGame::mainLoop() {
+void CheckersGame::mainLoop() {
 	std::string startMove;
 	std::string endMove;
 	char startArray[2];
@@ -211,7 +211,7 @@ void CheckersGame::changeTurn(char& currentMove) {
 				std::cout << "ERROR: Invalid move" << std::endl;
 			}
 
-		} while (!checkInput && !checkInput2);
+		} while (!checkInput || !checkInput2);
 
 		movePiece(startConvert, endConvert);
 		changeTurn(currentMove);
@@ -221,8 +221,10 @@ void CheckersGame::changeTurn(char& currentMove) {
 	
 	if (pieceCount[0] == 0) {
 		std::cout << "Red wins!" << std::endl;
+		winner = 1;
 	}
 	else if (pieceCount[1] == 0) {
 		std::cout << "Black wins!" << std::endl;
+		winner = 2;
 	}
 }
